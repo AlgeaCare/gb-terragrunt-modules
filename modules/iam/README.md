@@ -1,0 +1,1 @@
+Inspired by https://github.com/particuleio/terraform-scaleway-iam

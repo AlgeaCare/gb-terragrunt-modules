@@ -1,0 +1,7 @@
+# This is only for local development, please source that file when you like to locally develop the modules
+
+# Enter here your local path
+export TERRAGRUNT_SOURCE="/Users/chris/Inheaden_Work/Inheaden IT Ops/terraform-modules/"
+
+# Specify here your download folder for Terragrunt
+export TERRAGRUNT_DOWNLOAD="./.terragrunt-cache"
