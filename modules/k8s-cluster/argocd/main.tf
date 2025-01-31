@@ -11,13 +11,6 @@ resource "helm_release" "argocd" {
   namespace        = var.argocd_namespace
   create_namespace = true
 
-  values = [
-    templatefile("${path.module}/templates/${var.argocd_values_file}", {
-      k8s_ssh_private_key = tls_private_key.this.private_key_openssh
-      k8s_iac_url             = var.gitlab_private_repo_urls.k8s_iac
-    })
-  ]
-
   lifecycle {
     prevent_destroy = false
   }

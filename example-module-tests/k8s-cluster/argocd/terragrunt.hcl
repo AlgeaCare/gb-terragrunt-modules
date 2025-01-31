@@ -34,11 +34,6 @@ inputs = {
   cluster_ca_cert  = dependency.k8s-cluster.outputs.cluster_ca_cert
   cluster_token    = dependency.k8s-cluster.outputs.cluster_token
 
-
-  gitlab_private_repo_urls = {
-    k8s_iac = "git@gitlab.inheaden.io:XXX.git"
-  }
-
   initial_bootstrap = {
     namespace      = "argocd",
     path           = "cluster-bootstrap",

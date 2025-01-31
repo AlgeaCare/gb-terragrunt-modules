@@ -19,12 +19,6 @@ variable "argocd_values_file" {
   default     = null
 }
 
-variable "gitlab_private_repo_urls" {
-  description = "GitLab repo urls"
-  type        = any
-  default     = {}
-}
-
 # tflint-ignore: terraform_unused_declarations
 
 variable "argocd_configs" {
