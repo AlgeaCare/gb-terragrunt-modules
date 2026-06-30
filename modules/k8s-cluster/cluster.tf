@@ -22,6 +22,12 @@ resource "scaleway_k8s_cluster" "this" {
     expendable_pods_priority_cutoff  = try(var.autoscaler_config.expendable_pods_priority_cutoff, null)
     scale_down_utilization_threshold = try(var.autoscaler_config.scale_down_utilization_threshold, null)
     max_graceful_termination_sec     = try(var.autoscaler_config.max_graceful_termination_sec, null)
+    # Set explicitly: scaleway provider >= 2.77.1 dropped the computed defaults
+    # for these fields (PR #4132). They are ForceNew, so leaving them unset reads
+    # as "<value> -> null" and recreates the cluster. Pass the live values to keep
+    # config in sync with state and avoid a destructive replacement.
+    log_level                     = try(var.autoscaler_config.log_level, null)
+    skip_nodes_with_local_storage = try(var.autoscaler_config.skip_nodes_with_local_storage, null)
   }
 
   dynamic "auto_upgrade" {
