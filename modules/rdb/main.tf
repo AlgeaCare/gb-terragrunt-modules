@@ -32,4 +32,11 @@ resource "scaleway_rdb_instance" "this" {
       pn_id  = lookup(each.value.private_networking, "pn_id", null)
     }
   }
+
+  # Scaleway has no deletion-protection flag for RDB, and CI applies
+  # non-interactively, so a forced replacement would execute unattended.
+  # Remove this block deliberately if an instance ever needs deleting.
+  lifecycle {
+    prevent_destroy = true
+  }
 }
