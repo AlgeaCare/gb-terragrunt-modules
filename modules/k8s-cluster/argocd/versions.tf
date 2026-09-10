@@ -4,7 +4,7 @@ terraform {
   required_providers {
     scaleway = {
       source  = "scaleway/scaleway"
-      version = ">= 2.16"
+      version = "~> 2.82"
     }
     tls = {
       source  = "hashicorp/tls"
@@ -12,11 +12,11 @@ terraform {
     }
     helm = {
       source  = "hashicorp/helm"
-      version = ">= 2.4"
+      version = "~> 3.3"
     }
     kubectl = {
       source  = "gavinbunney/kubectl"
-      version = ">= 1.14"
+      version = "~> 1.19"
     }
   }
 }
