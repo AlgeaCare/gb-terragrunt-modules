@@ -21,6 +21,7 @@ variable "container_registry_password" {
   type = string
   default = null
   description = "CR password to construct docker config json"
+  sensitive = true
 }
 
 #variable "container_registry_password_user_base64" {
